@@ -2484,7 +2484,7 @@
     })();
     
     // URL ACTUALIZADA DE TU GOOGLE APPS SCRIPT
-    const SCRIPT_STOCK_URL = "https://script.google.com/macros/s/AKfycbyy1WpykRacvRh20sv41lDJUlGwwaeGqGszcXJkFZacZHhQvvElXlRMbPch2TkVAPDj/exec";
+    const SCRIPT_STOCK_URL = "https://script.google.com/macros/s/AKfycbww_9-Vx3OazscNy04pH8zLsXTFKgkO6nizlibssGA--dWcozjxAbixbihXxsBdTVhg/exec";
 
     const REF_EXPIRY_DAYS = 45;
     const urlParams = new URLSearchParams(window.location.search);
@@ -4023,7 +4023,7 @@
       if (paypalState_ !== 0) return;
       paypalState_ = 1;
       const sc = document.createElement('script');
-      sc.src = 'https://www.paypal.com/sdk/js?client-id=BAAF9DatTWWsD1k73uUWsWOiU-XHylTDu3NNG87wq9fgkK7hIqGbiRFXrl2INZvHTcHwOUKwlsIFqRVIGs&currency=MXN&components=buttons';
+      sc.src = 'https://www.paypal.com/sdk/js?client-id=BAAMAAbc1KSkrIwCea2P_43WT8CHBX59GJJQLb84-HLUN5OOHL6X3VtHKsfAh902sOFXJkviAdmcCf5_Ss&currency=MXN&components=buttons';
       sc.onload = () => { initPayPalButtons(); paypalState_ = 2; };
       sc.onerror = () => { paypalState_ = 0; };
       document.head.appendChild(sc);
