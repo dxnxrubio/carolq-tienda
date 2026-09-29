@@ -2615,11 +2615,11 @@
       setTimeout(() => container.remove(), 3200);
     }
 
-    function showToast(text) {
+    function showToast(text, ms) {
       const toast = document.getElementById('toast');
       toast.textContent = text;
       toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2600);
+      setTimeout(() => toast.classList.remove('show'), ms || 2600);
     }
 
     let lastProductsSignature = "";
@@ -2673,6 +2673,49 @@
       if (debeRenderizar) {
         renderCatalog(!isInitial);
       }
+    }
+
+    // Antes de cobrar o enviar el pedido: trae el catálogo fresco y corrige la bolsa
+    // (piezas agotadas, cantidades mayores al stock y cambios de precio).
+    // Regresa true si la bolsa quedó igual; false si hubo cambios (ya se le avisó a la clienta y NO se cobra).
+    // Si no se pudo consultar el catálogo, deja continuar: el servidor vuelve a validar todo.
+    async function revisarBolsaContraCatalogo_() {
+      try {
+        const res = await fetch(SCRIPT_STOCK_URL + '?t=' + Date.now());
+        if (!res.ok) return true;
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) return true;
+        lastProductsSignature = JSON.stringify(data);
+        applyProducts(data);
+        renderCatalog(true);
+      } catch (err) {
+        return true;
+      }
+
+      const avisos = [];
+      cart = cart.filter(item => {
+        const etiqueta = item.nombre + (item.variante ? ' (' + item.variante + ')' : '');
+        const live = products.find(p => String(p.id) === String(item.id));
+        if (!live || live.stock <= 0 || String(live.estado || '').toLowerCase() === 'agotado') {
+          avisos.push('«' + etiqueta + '» se agotó y la quitamos de tu bolsa.');
+          return false;
+        }
+        if (item.qty > live.stock) {
+          avisos.push('De «' + etiqueta + '» solo quedan ' + live.stock + '; ajustamos tu bolsa.');
+          item.qty = live.stock;
+        }
+        if (Number(live.precio) !== Number(item.precio)) {
+          avisos.push('El precio de «' + etiqueta + '» cambió a $' + live.precio + '.');
+        }
+        item.precio = Number(live.precio);
+        item.stock = live.stock;
+        return true;
+      });
+
+      if (avisos.length === 0) return true;
+      updateCartUI();
+      showToast(avisos.join(' ') + ' Revisa tu bolsa y vuelve a intentar.', 7000);
+      return false;
     }
 
     // === NAVEGACIÓN DINÁMICA: Departamentos + Subcategorías ===
@@ -3714,6 +3757,9 @@
           const validCustomer = validateCustomerForm();
           if (!validCustomer) throw new Error('VALIDATION');
 
+          const bolsaOk = await revisarBolsaContraCatalogo_();
+          if (!bolsaOk) throw new Error('VALIDATION');
+
           const resVip = await verificarVipEnBackend(validCustomer.email, validCustomer.phone);
           isVipElegible = resVip.elegible;
           vipDiscountType = resVip.tipo || "Bienvenida";
@@ -3913,6 +3959,8 @@
 
       const customerData = validateCustomerForm();
       if (!customerData) return;
+
+      if (!(await revisarBolsaContraCatalogo_())) return;
 
       const resVip = await verificarVipEnBackend(customerData.email, customerData.phone);
       isVipElegible = resVip.elegible;
