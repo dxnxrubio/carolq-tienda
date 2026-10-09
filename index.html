@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>Carol Q 💖✨ — Joyería, Prendas & Accesorios</title>
+  <title>CarolQ 💖✨ — Joyería, Prendas & Accesorios</title>
   <meta name="description" content="Tienda de joyería, accesorios y prendas con envíos a todo México. Pedidos por WhatsApp, PayPal o transferencia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1866,6 +1866,174 @@
     .legal-links { display:flex; flex-direction:column; gap:5px; margin-top:8px; }
     .legal-links a { color:var(--ink-soft); text-decoration:underline; font-size:0.82rem; }
     .footer-business { max-width:1100px; margin:0 auto; padding:6px 16px 0; font-size:0.74rem; line-height:1.6; color:var(--ink-soft); text-align:center; }
+    /* [ref1] Referencias */
+    .refs-title { font-family:'Cormorant Garamond', serif; font-size:1.7rem; font-weight:600; color:var(--ink); text-align:center; }   /* [R2] sigue usandolo Resenas; la galeria ahora es .trab-* */
+    /* [R2] Galeria "Trabajos hechos" dentro de #personalizeModal (reemplaza a .refs-section/.refs-card) */
+    .pz-tabs { display:flex; gap:4px; padding:4px; margin:4px 0 14px; border:1px solid var(--line); border-radius:999px; background:var(--card-media-bg); flex-shrink:0; }
+    .pz-tab { flex:1 1 0; min-height:44px; padding:0 12px; border:none; border-radius:999px; background:transparent; color:var(--ink-soft); font-family:inherit; font-size:0.84rem; font-weight:700; cursor:pointer; transition:background-color 0.2s var(--ease-fluid), color 0.2s var(--ease-fluid), transform 0.15s var(--ease-fluid); }
+    .pz-tab.active { background:var(--ink); color:var(--bg-silk); }
+    .pz-tab:focus-visible, .trab-chip:focus-visible, .trab-card:focus-visible, .trab-btn:focus-visible, .trab-btn-sec:focus-visible { outline:2px solid var(--gold-primary); outline-offset:2px; }
+    .pz-tab:active, .trab-chip:active, .trab-btn:not(:disabled):active, .trab-btn-sec:active { transform:scale3d(0.98,0.98,1); }
+    .pz-panel[hidden] { display:none; }
+    .pz-panel:not([hidden]) { animation:cardIn 0.4s var(--ease-fluid) backwards; }
+    .pz-panel-pedido { width:100%; max-width:460px; margin:0 auto; }
+    .trab-chips { display:flex; gap:8px; overflow-x:auto; padding:2px 2px 8px; margin:0 -2px 6px; scrollbar-width:none; -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain; }
+    .trab-chips::-webkit-scrollbar { display:none; }
+    .trab-chips[hidden] { display:none; }
+    .trab-chips:not([hidden]) { animation:cardIn 0.4s var(--ease-fluid) backwards; }
+    .trab-chip { flex:0 0 auto; min-height:44px; padding:0 16px; border:1px solid var(--line-strong); border-radius:999px; background:var(--bg-card); color:var(--ink); font-family:inherit; font-size:0.82rem; font-weight:600; white-space:nowrap; cursor:pointer; transition:border-color 0.2s var(--ease-fluid), background-color 0.2s var(--ease-fluid), transform 0.15s var(--ease-fluid); }
+    .trab-chip.active { border-color:var(--gold-primary); background:var(--gold-light); box-shadow:0 0 0 1px var(--gold-primary); }
+    .trab-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; min-height:120px; transition:opacity 0.15s var(--ease-fluid); }
+    .trab-grid:empty { min-height:0; }
+    .trab-grid.is-out { opacity:0; }
+    .trab-card { display:flex; flex-direction:column; min-width:0; padding:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--bg-card); color:var(--ink); font:inherit; text-align:left; cursor:pointer; transition:transform 0.25s var(--ease-fluid), box-shadow 0.25s var(--ease-fluid); animation:cardIn 0.4s var(--ease-fluid) backwards; animation-delay:calc(var(--i, 0) * 40ms); }
+    .trab-media { display:block; position:relative; width:100%; aspect-ratio:1/1; overflow:hidden; background:var(--card-media-bg); }
+    .trab-media img { display:block; width:100%; height:100%; aspect-ratio:1/1; object-fit:cover; opacity:0; transition:opacity 0.4s var(--ease-fluid); }
+    .trab-media img.trab-img-ok { opacity:1; }
+    .trab-ph { display:flex; align-items:center; justify-content:center; width:100%; height:100%; font-size:2.6rem; background:linear-gradient(135deg, var(--gold-light), var(--card-media-bg)); }
+    .trab-ph1 { background:linear-gradient(135deg, var(--card-media-bg), var(--line)); }
+    .trab-ph2 { background:linear-gradient(315deg, var(--gold-light), var(--line)); }
+    .trab-body { display:flex; flex-direction:column; align-items:flex-start; gap:6px; padding:10px 12px 12px; min-width:0; }
+    .trab-title { font-weight:600; font-size:0.85rem; line-height:1.3; color:var(--ink); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .trab-pill { padding:2px 9px; border:1px solid var(--line-strong); border-radius:999px; color:var(--gold-deep); font-size:0.68rem; font-weight:600; line-height:1.5; }
+    .trab-quote { color:var(--ink-soft); font-size:0.78rem; line-height:1.45; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+    .trab-name { color:var(--gold-deep); font-size:0.74rem; font-weight:500; }
+    .trab-title, .trab-pill, .trab-quote, .trab-name { overflow-wrap:anywhere; max-width:100%; }
+    .trab-skel { aspect-ratio:4/5; border:1px solid var(--line); border-radius:14px; background:var(--card-media-bg); animation:pulseShimmer 1.4s infinite ease-in-out; }
+    .trab-msg { padding:26px 12px 8px; text-align:center; color:var(--ink-soft); font-size:0.9rem; line-height:1.5; overflow-wrap:anywhere; }
+    .trab-msg[hidden] { display:none; }
+    .trab-msg:not([hidden]) { animation:cardIn 0.4s var(--ease-fluid) backwards; }
+    .trab-btn, .trab-btn-sec { display:flex; align-items:center; justify-content:center; min-height:44px; padding:0 18px; border-radius:6px; font-family:inherit; font-size:0.86rem; font-weight:700; text-align:center; text-decoration:none; cursor:pointer; transition:transform 0.15s var(--ease-fluid), box-shadow 0.2s var(--ease-fluid), border-color 0.2s var(--ease-fluid), opacity 0.2s var(--ease-fluid); }
+    .trab-btn { margin:14px auto 0; border:1px solid var(--ink); background:var(--ink); color:var(--bg-silk); }
+    .trab-btn:disabled { opacity:0.5; cursor:not-allowed; }
+    .trab-btn-sec { width:100%; margin-top:12px; border:1px solid var(--line-strong); background:var(--bg-card); color:var(--ink); }
+    .trab-btn-sec[hidden] { display:none; }
+    .trab-btn-sec:not([hidden]) { animation:cardIn 0.4s var(--ease-fluid) backwards; }
+    @media (min-width: 580px) { .trab-grid { grid-template-columns:repeat(3, minmax(0, 1fr)); } }
+    @media (min-width: 769px) {
+      .modal-card.personalize-card { max-width:760px; }
+      .trab-grid { grid-template-columns:repeat(4, minmax(0, 1fr)); }
+      .trab-chips { flex-wrap:wrap; overflow-x:visible; }
+      .trab-btn-sec { width:auto; margin-left:auto; margin-right:auto; min-width:280px; }
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .pz-tab:not(.active):hover { background:var(--gold-light); color:var(--ink); }
+      .trab-chip:not(.active):hover { border-color:var(--gold-primary); }
+      .trab-card:hover { transform:translate3d(0,-2px,0); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
+      .trab-btn:not(:disabled):hover, .trab-btn-sec:hover { transform:translate3d(0,-1px,0); box-shadow:0 4px 10px rgba(0,0,0,0.10); }
+      .trab-btn-sec:hover { border-color:var(--gold-primary); }
+    }
+    /* [R2b] Visor de fotos de la galeria y tarjetita de referencia en "Hacer mi pedido" */
+    .trab-viewer { z-index:90; }
+    .trab-viewer .modal-card { max-width:560px; max-height:calc(100vh - 32px); max-height:calc(100dvh - 32px); padding:14px; overflow-y:auto; transform:scale3d(0.96,0.96,1); transition:transform 0.35s var(--ease-fluid); }
+    .trab-viewer.open .modal-card { transform:none; }
+    .trab-v-stage { position:relative; flex-shrink:0; width:100%; aspect-ratio:1/1; max-height:58vh; max-height:58dvh; margin:0 auto; border-radius:10px; overflow:hidden; background:var(--card-media-bg); touch-action:pan-y; }
+    .trab-v-stage img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; opacity:0; transition:opacity 0.2s var(--ease-fluid); }
+    .trab-v-stage img.trab-img-ok { opacity:1; }
+    .trab-v-stage .trab-ph { position:absolute; inset:0; font-size:5rem; }
+    .trab-v-skel { position:absolute; inset:0; background:var(--card-media-bg); animation:pulseShimmer 1.4s infinite ease-in-out; transition:opacity 0.2s var(--ease-fluid); }
+    .trab-v-skel.is-off { opacity:0; pointer-events:none; animation:none; }
+    .trab-v-fail { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:16px; text-align:center; color:var(--ink-soft); font-size:0.9rem; line-height:1.5; overflow-wrap:anywhere; opacity:0; pointer-events:none; transition:opacity 0.2s var(--ease-fluid); }
+    .trab-v-fail.is-on { opacity:1; }
+    .trab-viewer .qv-close-btn { top:22px; right:22px; width:44px; height:44px; background:var(--bg-card); color:var(--ink); border:1px solid var(--line-strong); }
+    .trab-v-nav { position:absolute; top:50%; z-index:2; display:flex; align-items:center; justify-content:center; width:44px; height:44px; margin-top:-22px; padding:0; border:1px solid var(--line-strong); border-radius:50%; background:var(--bg-card); color:var(--ink); font-family:inherit; font-size:1.4rem; line-height:1; cursor:pointer; transition:transform 0.15s var(--ease-fluid), opacity 0.2s var(--ease-fluid), border-color 0.2s var(--ease-fluid); }
+    .trab-v-prev { left:8px; }
+    .trab-v-next { right:8px; }
+    .trab-v-nav:disabled { opacity:0.35; cursor:not-allowed; }
+    .trab-v-nav:not(:disabled):active { transform:scale3d(0.94,0.94,1); }
+    .trab-viewer .qv-close-btn:focus-visible, .trab-v-nav:focus-visible { outline:2px solid var(--gold-primary); outline-offset:2px; }
+    .trab-v-info { display:flex; flex-direction:column; align-items:flex-start; gap:6px; padding:12px 2px 0; min-width:0; transition:opacity 0.2s var(--ease-fluid); }
+    .trab-v-info.is-out { opacity:0; }
+    .trab-v-count { color:var(--ink-faint); font-size:0.74rem; font-weight:600; }
+    .trab-viewer .trab-v-info h3 { margin:0; overflow-wrap:anywhere; max-width:100%; }
+    .trab-v-info .trab-quote { display:block; -webkit-line-clamp:unset; overflow:visible; font-size:0.84rem; }
+    .trab-v-info [hidden] { display:none; }
+    .trab-v-actions { display:flex; flex-direction:column; gap:0; flex-shrink:0; }
+    .trab-v-actions .trab-btn { width:100%; margin:14px 0 0; }
+    .trab-v-actions .trab-btn-sec { margin-top:8px; }
+    .pz-ref { display:flex; align-items:center; gap:10px; margin:0 0 14px; padding:8px; border:1px solid var(--line); border-radius:14px; background:var(--bg-card); transition:opacity 0.2s var(--ease-fluid), transform 0.2s var(--ease-fluid); }
+    .pz-ref[hidden] { display:none; }
+    .pz-ref:not([hidden]) { animation:cardIn 0.4s var(--ease-fluid) backwards; }
+    .pz-ref.is-out { opacity:0; transform:scale3d(0.98,0.98,1); }
+    .pz-ref-thumb { display:flex; align-items:center; justify-content:center; flex:0 0 48px; width:48px; height:48px; border-radius:8px; overflow:hidden; background:var(--card-media-bg); font-size:1.5rem; }
+    .pz-ref-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .pz-ref-txt { flex:1 1 auto; min-width:0; font-size:0.84rem; line-height:1.35; color:var(--ink); overflow-wrap:anywhere; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .pz-ref-lbl { color:var(--gold-deep); font-weight:700; }
+    .pz-ref-x { flex:0 0 44px; width:44px; height:44px; border:none; border-radius:50%; background:transparent; color:var(--ink-soft); font-size:1.4rem; line-height:1; cursor:pointer; transition:transform 0.15s var(--ease-fluid), background-color 0.2s var(--ease-fluid); }
+    .pz-ref-x:focus-visible { outline:2px solid var(--gold-primary); outline-offset:2px; }
+    .pz-ref-x:active { transform:scale3d(0.94,0.94,1); }
+    .pz-demo-msg { margin-top:12px; padding:10px 12px; border:1px dashed var(--line-strong); border-radius:10px; color:var(--ink-soft); font-size:0.8rem; line-height:1.45; overflow-wrap:anywhere; white-space:pre-line; }
+    .pz-demo-msg[hidden] { display:none; }
+    .pz-demo-msg:not([hidden]) { animation:cardIn 0.4s var(--ease-fluid) backwards; }
+    @media (hover: hover) and (pointer: fine) {
+      .trab-v-nav:not(:disabled):hover { border-color:var(--gold-primary); }
+      .trab-viewer .qv-close-btn:hover { background:var(--gold-light); }
+      .pz-ref-x:hover { background:var(--gold-light); color:var(--ink); }
+    }
+    /* [R1] Resenas con estrellas */
+    .res-section { max-width:1100px; margin:0 auto; padding:28px 16px 8px; }
+    .res-section[hidden] { display:none; }
+    .res-section.res-vacia .res-title { font-size:1.2rem; }
+    .res-summary { display:flex; flex-direction:column; align-items:center; gap:4px; margin:10px 0 18px; }
+    .res-summary-row { display:flex; align-items:center; gap:8px; font-size:0.92rem; color:var(--ink); }
+    .res-summary-label { min-width:64px; font-weight:600; }
+    .res-summary-count { color:var(--ink-soft); font-size:0.82rem; margin-top:2px; }
+    .res-stars { color:var(--gold-deep); letter-spacing:2px; font-size:1.05rem; }
+    .res-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:14px; }
+    .res-card { background:var(--bg-card); border:1px solid var(--line); border-radius:14px; padding:14px; display:flex; flex-direction:column; gap:4px; }
+    .res-card-row { display:flex; align-items:center; gap:8px; font-size:0.8rem; color:var(--ink-soft); }
+    .res-card-row .res-stars { font-size:0.95rem; }
+    .res-quote { color:var(--ink-soft); font-size:0.86rem; line-height:1.5; margin-top:6px; overflow-wrap:anywhere; }
+    .res-name { color:var(--gold-deep); font-size:0.8rem; margin-top:8px; font-weight:500; }
+    .res-badge { align-self:flex-start; margin-top:6px; background:var(--gold-light); color:var(--gold-deep); border:1px solid var(--line-strong); border-radius:999px; padding:2px 10px; font-size:0.72rem; font-weight:600; }
+    .res-empty { text-align:center; color:var(--ink-soft); font-size:0.9rem; margin:6px 0 14px; }
+    .res-empty[hidden] { display:none; }
+    .res-actions { display:flex; justify-content:center; margin-top:18px; }
+    .res-btn { background:var(--ink); color:var(--bg-silk); border:none; padding:11px 22px; min-height:44px; border-radius:6px; font-weight:600; font-size:0.86rem; font-family:inherit; cursor:pointer; transition:transform 0.18s var(--ease-fluid), box-shadow 0.18s var(--ease-fluid), opacity 0.18s var(--ease-fluid); } /* [R1p] */
+    .res-btn:active:not(:disabled), .res-modal-actions .btn-close-modal:active:not(:disabled) { transform:scale3d(0.98,0.98,1); }
+    .res-btn:focus-visible, .res-modal-actions .btn-close-modal:focus-visible, .res-star-btn:focus-visible { outline:2px solid var(--gold-primary); outline-offset:3px; }
+    .res-btn:disabled, .res-modal-actions .btn-close-modal:disabled { opacity:0.55; cursor:not-allowed; }
+    .res-modal-actions .btn-close-modal { min-height:44px; font-family:inherit; transition:transform 0.18s var(--ease-fluid), box-shadow 0.18s var(--ease-fluid), border-color 0.18s var(--ease-fluid), color 0.18s var(--ease-fluid), opacity 0.18s var(--ease-fluid); }
+    @media (hover: hover) and (pointer: fine) {
+      .res-btn:not(:disabled):hover { transform:translate3d(0,-1px,0); box-shadow:0 6px 14px rgba(0,0,0,0.16); }
+      .res-btn:not(:disabled):active { transform:scale3d(0.98,0.98,1); }
+      .res-modal-actions .btn-close-modal:not(:disabled):hover { transform:translate3d(0,-1px,0); border-color:var(--line-strong); color:var(--ink); box-shadow:0 4px 10px rgba(0,0,0,0.10); }
+      .res-card:hover { transform:translate3d(0,-2px,0); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
+    }
+    /* [R1p] Entrada suave de secciones y tarjetas (fill backwards: no pisa el hover) */
+    .res-section:not([hidden]) { animation:cardIn 0.4s var(--ease-fluid) backwards; }
+    .res-card { transition:transform 0.25s var(--ease-fluid), box-shadow 0.25s var(--ease-fluid); animation:cardIn 0.4s var(--ease-fluid) backwards; animation-delay:calc(var(--i, 0) * 40ms); }
+    .res-name { overflow-wrap:anywhere; }
+    @keyframes resIconPop { 0% { opacity:0; transform:scale3d(0.4,0.4,1); } 100% { opacity:1; transform:scale3d(1,1,1); } }
+    .res-modal-card { max-width:480px; }
+    .res-form { overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; padding-right:4px; margin:8px 0 12px; display:flex; flex-direction:column; gap:12px; }
+    .res-field { display:flex; flex-direction:column; gap:3px; }
+    .res-field input, .res-field textarea { width:100%; border:1px solid var(--line-strong); padding:9px 11px; border-radius:6px; font-size:16px; font-family:inherit; background:var(--bg-card); color:var(--ink); }
+    .res-field input, .res-field textarea { transition:border-color 0.18s var(--ease-fluid), opacity 0.18s var(--ease-fluid); } /* [R1p] */
+    .res-field input:focus, .res-field textarea:focus { border-color:var(--gold-primary); }
+    .res-field input[readonly], .res-field textarea[readonly] { opacity:0.65; cursor:not-allowed; }
+    .res-field textarea { resize:vertical; min-height:80px; }
+    .res-count { align-self:flex-end; font-size:0.72rem; color:var(--ink-faint); transition:color 0.18s var(--ease-fluid); }
+    .res-count.res-count-aviso { color:var(--rose-deep); font-weight:600; }
+    .res-note { font-size:0.74rem; color:var(--ink-soft); line-height:1.4; }
+    .res-rate { display:flex; gap:2px; }
+    .res-star-btn { background:none; border:none; color:var(--gold-deep); font-size:1.7rem; line-height:1; width:44px; height:44px; cursor:pointer; padding:0; font-family:inherit; border-radius:8px; transition:transform 0.18s var(--ease-fluid); } /* [R1p] */
+    .res-star-btn:active { transform:scale3d(0.9,0.9,1); }
+    .res-star-btn.res-star-pop { animation:addPop 0.45s var(--ease-spring); }
+    .res-form.res-enviando .res-rate { pointer-events:none; opacity:0.65; }
+    .res-hp { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .res-msg { font-size:0.84rem; line-height:1.4; min-height:1.2em; overflow-wrap:anywhere; opacity:0; transform:translate3d(0,-4px,0); transition:opacity 0.2s var(--ease-fluid), transform 0.2s var(--ease-fluid); } /* [R1p] */
+    .res-msg.res-error, .res-msg.res-ok { opacity:1; transform:translate3d(0,0,0); }
+    .res-msg.res-error { color:var(--rose-deep); font-weight:600; }
+    .res-msg.res-ok { color:var(--gold-deep); font-weight:600; }
+    .res-modal-actions { display:flex; flex-direction:column; gap:8px; }
+    .res-modal-actions .res-btn { width:100%; }
+    /* [R1c] Ventana de agradecimiento */
+    .res-gracias-card { text-align:center; align-items:center; gap:10px; padding:26px 22px; }
+    .res-gracias-icono { font-size:2.2rem; line-height:1; color:var(--gold-deep); }
+    .res-gracias-texto { color:var(--ink-soft); font-size:0.92rem; line-height:1.5; margin:0 0 6px; }
+    .res-gracias-card .res-btn { min-width:140px; }
+    .modal-overlay.open .res-gracias-icono { animation:resIconPop 0.5s var(--ease-spring) 0.1s backwards; } /* [R1p] */
   </style>
 </head>
 <body>
@@ -1886,7 +2054,7 @@
   <header id="mainHeader">
     <div class="nav-wrap">
       <a href="#" class="brand-logo">
-        <div class="brand-name">Carol Q <span>💖✨</span></div>
+        <div class="brand-name">CarolQ <span>💖✨</span></div>
         <div class="brand-sub">Joyería, prendas & accesorios</div>
       </a>
       <div class="header-actions">
@@ -1945,6 +2113,8 @@
     </button>
   </section>
 
+  <!-- [R2] Los trabajos personalizados (pestana Referencias) ya no van aqui: viven dentro de #personalizeModal -->
+
   <section class="catalog-wrap">
     <div class="catalog-grid" id="catalogGrid">
       <div class="skeleton-card"></div>
@@ -1953,6 +2123,69 @@
       <div class="skeleton-card"></div>
     </div>
   </section>
+
+  <!-- [R1] [R1b] Resenas con estrellas, DEBAJO del catalogo (se llena desde la pestana Resenas) -->
+  <section class="res-section" id="resSection" aria-labelledby="resTitulo" hidden>
+    <h2 class="refs-title res-title" id="resTitulo">Lo que dicen de CarolQ</h2>
+    <div class="res-summary" id="resSummary"></div>
+    <p class="res-empty" id="resEmpty" hidden>Sé la primera en dejar tu reseña</p>
+    <div class="res-grid" id="resGrid"></div>
+    <div class="res-actions">
+      <button type="button" class="res-btn" id="resOpenBtn">Dejar una reseña</button>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="resModal">
+    <div class="modal-card res-modal-card" role="dialog" aria-modal="true" aria-labelledby="resModalTitulo">
+      <h3 id="resModalTitulo">Cuéntanos cómo te fue</h3>
+      <form class="res-form" id="resForm" novalidate>
+        <label class="res-field">
+          <span class="input-label-hint">Tu nombre *</span>
+          <input type="text" id="resNombre" maxlength="40" autocomplete="given-name">
+        </label>
+        <div class="res-field" role="group" aria-labelledby="resServicioLbl">
+          <span class="input-label-hint" id="resServicioLbl">Servicio *</span>
+          <div class="res-rate" id="resRateServicio"></div>
+        </div>
+        <div class="res-field" role="group" aria-labelledby="resCalidadLbl">
+          <span class="input-label-hint" id="resCalidadLbl">Calidad *</span>
+          <div class="res-rate" id="resRateCalidad"></div>
+        </div>
+        <label class="res-field">
+          <span class="input-label-hint">Comentario (opcional)</span>
+          <textarea id="resComentario" maxlength="300" rows="3"></textarea>
+          <span class="res-count" id="resContador">0/300</span>
+        </label>
+        <label class="res-field">
+          <span class="input-label-hint">Folio de tu pedido (opcional)</span>
+          <input type="text" id="resFolio" maxlength="30" autocomplete="off">
+        </label>
+        <label class="res-field">
+          <span class="input-label-hint">WhatsApp (10 dígitos) (opcional)</span>
+          <input type="tel" id="resWhatsapp" maxlength="15" inputmode="numeric" autocomplete="off">
+        </label>
+        <p class="res-note">Opcional: sirve para marcar tu reseña como compra verificada. No guardamos tu número.</p>
+        <div class="res-hp" aria-hidden="true">
+          <label>Web <input type="text" name="web" id="resWeb" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <p class="res-msg" id="resMsg" role="alert"></p>
+        <div class="res-modal-actions">
+          <button type="submit" class="res-btn" id="resEnviarBtn">Enviar</button>
+          <button type="button" class="btn-close-modal" id="resCerrarBtn">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- [R1c] Ventana de agradecimiento al enviar una resena -->
+  <div class="modal-overlay" id="resGraciasModal">
+    <div class="modal-card res-modal-card res-gracias-card" role="dialog" aria-modal="true" aria-labelledby="resGraciasTitulo" aria-describedby="resGraciasTexto">
+      <div class="res-gracias-icono" aria-hidden="true">★</div>
+      <h3 id="resGraciasTitulo">¡Gracias por tu reseña!</h3>
+      <p class="res-gracias-texto" id="resGraciasTexto">Tu reseña se publicará cuando Carol la revise.</p>
+      <button type="button" class="res-btn" id="resGraciasBtn">Listo</button>
+    </div>
+  </div>
 
   <section class="trust-strip-section">
     <div class="trust-grid">
@@ -2006,7 +2239,7 @@
   <footer>
     <div class="footer-wrap">
       <div class="footer-col">
-        <h4>Carol Q 💖✨</h4>
+        <h4>CarolQ 💖✨</h4>
         <p style="max-width: 34ch; margin-bottom: 8px;">Un espacio creado con mucho cariño para ofrecerte accesorios, prendas y detallitos con significado.</p>
         <p style="font-size: 0.8rem; color: var(--gold-deep); font-weight: 500;">Gracias, gracias, gracias 🙏</p>
       </div>
@@ -2036,7 +2269,7 @@
       </div>
     </div>
     <div class="footer-bottom-line">
-      © 2026 Carol Q. Todos los derechos reservados.
+      © 2026 CarolQ. Todos los derechos reservados.
     </div>
     <p class="footer-business">Responsable: Dulce Carolina Quintero Martinez (persona física) · Estado de México · WhatsApp 55 3552 2522 · carolqvirtual@gmail.com</p>
   </footer>
@@ -2179,7 +2412,7 @@
               <input type="checkbox" id="vipCommunityCheckbox" onchange="updateCartUI()">
               <label for="vipCommunityCheckbox">
                 <span id="vipOptinLabelText">
-                  <strong>✨ (Opcional) Unirme a la Comunidad VIP de Carol Q</strong><br>
+                  <strong>✨ (Opcional) Unirme a la Comunidad VIP de CarolQ</strong><br>
                   Acepto recibir novedades y promociones por correo y WhatsApp; puedo darme de baja cuando quiera. Descuento de bienvenida: 10% en tu primera compra desde $999 (máx. $200).
                 </span>
                 <div id="vipEligibilityContainer" style="margin-top: 6px;"></div>
@@ -2273,24 +2506,72 @@
     <div class="modal-card personalize-card">
       <button class="qv-close-btn" id="closePersonalizeBtn" aria-label="Cerrar">&times;</button>
       <h3 class="pz-title">🎨 Personaliza tu pieza</h3>
-      <p class="pz-subtitle">Elige tu artículo y cuéntanos talla o color. Te atendemos por WhatsApp, ahí mismo nos compartes tu diseño y te cotizamos.</p>
 
-      <div class="pz-step">
-        <p class="pz-step-label"><span class="pz-step-num">1</span> Elige el artículo</p>
-        <div class="pz-blanks-grid" id="pzBlanksGrid">
-          <button type="button" class="pz-blank-btn" data-articulo="Playera"><span class="pz-blank-icon">👕</span><span class="pz-blank-name">Playera</span></button>
-          <button type="button" class="pz-blank-btn" data-articulo="Sudadera"><span class="pz-blank-icon">🧥</span><span class="pz-blank-name">Sudadera</span></button>
-          <button type="button" class="pz-blank-btn" data-articulo="Taza"><span class="pz-blank-icon">☕</span><span class="pz-blank-name">Taza</span></button>
-          <button type="button" class="pz-blank-btn" data-articulo="Termo"><span class="pz-blank-icon">🥤</span><span class="pz-blank-name">Termo</span></button>
+      <!-- [R2] Pestanas: Ver trabajos / Hacer mi pedido -->
+      <div class="pz-tabs" id="pzTabs" role="tablist" aria-label="Personalizados">
+        <button type="button" class="pz-tab active" id="pzTabTrabajos" role="tab" aria-selected="true" aria-controls="pzPanelTrabajos">Ver trabajos</button>
+        <button type="button" class="pz-tab" id="pzTabPedido" role="tab" aria-selected="false" aria-controls="pzPanelPedido" tabindex="-1">Hacer mi pedido</button>
+      </div>
+
+      <div class="pz-panel" id="pzPanelTrabajos" role="tabpanel" aria-labelledby="pzTabTrabajos">
+        <div class="trab-chips" id="trabChips" role="group" aria-label="Filtrar por categoría" hidden></div>
+        <div class="trab-grid" id="trabGrid" aria-busy="true"></div>
+        <div class="trab-msg" id="trabMsg" aria-live="polite" hidden></div>
+        <button type="button" class="trab-btn-sec trab-more" id="trabMasBtn" hidden>Ver más trabajos</button>
+        <a class="trab-btn-sec trab-ig" id="trabIg" href="https://www.instagram.com/carolq_shop/" target="_blank" rel="noopener noreferrer" hidden>Ver más en Instagram @carolq_shop</a>
+      </div>
+
+      <div class="pz-panel pz-panel-pedido" id="pzPanelPedido" role="tabpanel" aria-labelledby="pzTabPedido" hidden>
+        <!-- [R2b] Referencia elegida en la galeria -->
+        <div class="pz-ref" id="pzRef" role="group" aria-label="Trabajo de referencia" hidden>
+          <span class="pz-ref-thumb" id="pzRefThumb"></span>
+          <span class="pz-ref-txt"><span class="pz-ref-lbl">Referencia:</span> <span id="pzRefTitulo"></span></span>
+          <button type="button" class="pz-ref-x" id="pzRefQuitar" aria-label="Quitar la referencia">&times;</button>
         </div>
-      </div>
+        <p class="pz-subtitle">Elige tu artículo y cuéntanos talla o color. Te atendemos por WhatsApp, ahí mismo nos compartes tu diseño y te cotizamos.</p>
 
-      <div class="pz-step">
-        <p class="pz-step-label"><span class="pz-step-num">2</span> Talla / color sugerido</p>
-        <input type="text" id="pzDetalle" class="pz-detail-input" maxlength="80" autocomplete="off" placeholder='Ej. "Negra talla M" o "Blanca 11oz"'>
-      </div>
+        <div class="pz-step">
+          <p class="pz-step-label"><span class="pz-step-num">1</span> Elige el artículo</p>
+          <div class="pz-blanks-grid" id="pzBlanksGrid">
+            <button type="button" class="pz-blank-btn" data-articulo="Playera"><span class="pz-blank-icon">👕</span><span class="pz-blank-name">Playera</span></button>
+            <button type="button" class="pz-blank-btn" data-articulo="Sudadera"><span class="pz-blank-icon">🧥</span><span class="pz-blank-name">Sudadera</span></button>
+            <button type="button" class="pz-blank-btn" data-articulo="Taza"><span class="pz-blank-icon">☕</span><span class="pz-blank-name">Taza</span></button>
+            <button type="button" class="pz-blank-btn" data-articulo="Termo"><span class="pz-blank-icon">🥤</span><span class="pz-blank-name">Termo</span></button>
+          </div>
+        </div>
 
-      <button type="button" class="pz-add-btn" id="pzWhatsAppBtn" disabled>💬 Cotizar y enviar diseño por WhatsApp</button>
+        <div class="pz-step">
+          <p class="pz-step-label"><span class="pz-step-num">2</span> Talla / color sugerido</p>
+          <input type="text" id="pzDetalle" class="pz-detail-input" maxlength="80" autocomplete="off" placeholder='Ej. "Negra talla M" o "Blanca 11oz"'>
+        </div>
+
+        <button type="button" class="pz-add-btn" id="pzWhatsAppBtn" disabled>💬 Cotizar y enviar diseño por WhatsApp</button>
+        <p class="pz-demo-msg" id="pzDemoMsg" aria-live="polite" hidden></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- [R2b] Visor de fotos de la galeria (encima de la ventana de personalizar) -->
+  <div class="modal-overlay trab-viewer" id="trabViewer" inert>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="trabVTitulo">
+      <div class="trab-v-stage" id="trabVStage">
+        <button type="button" class="trab-v-nav trab-v-prev" id="trabVPrev" aria-label="Trabajo anterior">&#8249;</button>
+        <button type="button" class="trab-v-nav trab-v-next" id="trabVNext" aria-label="Trabajo siguiente">&#8250;</button>
+        <div class="trab-v-skel" id="trabVSkel" aria-hidden="true"></div>
+        <div class="trab-v-fail" id="trabVFail" role="status">No pudimos mostrar esta foto, pero puedes ver los demás trabajos.</div>
+      </div>
+      <button type="button" class="qv-close-btn" id="trabVClose" aria-label="Cerrar visor">&times;</button>
+      <div class="trab-v-info" id="trabVInfo" aria-live="polite">
+        <span class="trab-v-count" id="trabVCount"></span>
+        <h3 id="trabVTitulo"></h3>
+        <span class="trab-pill" id="trabVCat" hidden></span>
+        <span class="trab-quote" id="trabVQuote" hidden></span>
+        <span class="trab-name" id="trabVName" hidden></span>
+      </div>
+      <div class="trab-v-actions">
+        <button type="button" class="trab-btn" id="trabVQuiero">Quiero uno así</button>
+        <a class="trab-btn-sec" id="trabVIg" href="#" target="_blank" rel="noopener noreferrer" hidden>Ver en Instagram</a>
+      </div>
     </div>
   </div>
 
@@ -3242,7 +3523,7 @@
           if (!resVip.elegible) {
             const cleanPhone = phone.replace(/[^0-9]/g, '').slice(-10);
             const refLink = `${window.location.origin}${window.location.pathname}?ref=${cleanPhone || 'amiga'}`;
-            const waShareMsg = encodeURIComponent(`¡Hola! Te comparto la boutique de Carol Q con detalles y joyería hermosa 💖✨. Si compras desde mi enlace recibes beneficio especial: ${refLink}`);
+            const waShareMsg = encodeURIComponent(`¡Hola! Te comparto la boutique de CarolQ con detalles y joyería hermosa 💖✨. Si compras desde mi enlace recibes beneficio especial: ${refLink}`);
             const waShareUrl = `https://api.whatsapp.com/send?text=${waShareMsg}`;
             const requeridos = resVip.referidosRequeridos || 3;
             const referidas = resVip.referredCount || 0;
@@ -3790,7 +4071,7 @@
                   shipping: { currency_code: 'MXN', value: shipping.cost.toFixed(2) }
                 }
               },
-              description: `Pedido Carol Q (${cart.length} artículos)`
+              description: `Pedido CarolQ (${cart.length} artículos)`
             }]
           });
         },
@@ -3818,7 +4099,7 @@
 
           const orderList = buildOrderListText(itemsSnapshot);
           const discountMsg = discount > 0 ? `\n*Descuento Aplicado (${tipoDescuento}):* -$${discount} MXN\n` : "";
-          const mensaje = `¡Hola Carol Q! 💖✨ Acabo de pagar mi pedido en línea.\n\n*ID Transacción:* ${data.orderID}\n*Comprador:* ${customerData.name} (${customerData.phone})\n*Correo:* ${customerData.email}\n\n📦 *DATOS DE ENTREGA:*\n• Modalidad: ${shipping.name}\n• Domicilio: ${customerData.street || 'N/A'}, ${customerData.colonia || ''} ${customerData.zone}, ${customerData.state || ''} ${customerData.cp || ''}\n• Referencias: ${customerData.notes || 'Sin notas'}\n\n🛍️ *DETALLE DEL PEDIDO:*\n${orderList}${discountMsg}*Total Pagado: $${total} MXN*`;
+          const mensaje = `¡Hola CarolQ! 💖✨ Acabo de pagar mi pedido en línea.\n\n*ID Transacción:* ${data.orderID}\n*Comprador:* ${customerData.name} (${customerData.phone})\n*Correo:* ${customerData.email}\n\n📦 *DATOS DE ENTREGA:*\n• Modalidad: ${shipping.name}\n• Domicilio: ${customerData.street || 'N/A'}, ${customerData.colonia || ''} ${customerData.zone}, ${customerData.state || ''} ${customerData.cp || ''}\n• Referencias: ${customerData.notes || 'Sin notas'}\n\n🛍️ *DETALLE DEL PEDIDO:*\n${orderList}${discountMsg}*Total Pagado: $${total} MXN*`;
           const waUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_ORDERS_PHONE}&text=${encodeURIComponent(mensaje)}`;
 
           let title, message, waHint;
@@ -3879,6 +4160,15 @@
     const pzDetalleInput = document.getElementById('pzDetalle');
     const pzWhatsAppBtn = document.getElementById('pzWhatsAppBtn');
     let pzArticuloElegido = null;
+    let pzRef_ = null;   // [R2b] trabajo elegido como referencia: { titulo, foto, demo, icono }
+    function pzQuitarRef_(ya) {   // [R2b]
+      pzRef_ = null;
+      const el = document.getElementById('pzRef');
+      if (ya === true) { el.hidden = true; el.classList.remove('is-out'); document.getElementById('pzDemoMsg').hidden = true; return; }
+      if (el.hidden) return;
+      el.classList.add('is-out');
+      setTimeout(function () { if (!pzRef_) el.hidden = true; el.classList.remove('is-out'); }, 200);
+    }
 
     function updatePzButtonState() {
       pzWhatsAppBtn.disabled = !(pzArticuloElegido && pzDetalleInput.value.trim());
@@ -3889,15 +4179,18 @@
       pzDetalleInput.value = '';
       document.querySelectorAll('#pzBlanksGrid .pz-blank-btn').forEach(b => b.classList.remove('active'));
       updatePzButtonState();
+      pzQuitarRef_(true);   // [R2b]
     }
 
     function openPersonalizeModal() {
       resetPersonalizeForm();
+      trabAlAbrir_();   // [R2]
       personalizeModal.classList.add('open');
       lockBodyScroll();
     }
     function closePersonalizeModal() {
       if (!personalizeModal.classList.contains('open')) return;
+      vizCerrar_(false);   // [R2b] si el visor seguía abierto, libera su propio bloqueo
       personalizeModal.classList.remove('open');
       unlockBodyScroll();
     }
@@ -3921,7 +4214,14 @@
       const detalle = pzDetalleInput.value.trim();
       if (!pzArticuloElegido || !detalle) return;
 
-      const mensaje = `¡Hola Carol Q! 💖✨ Me gustaría cotizar y personalizar ${pzArticuloElegido === 'Termo' ? 'un' : 'una'} ${pzArticuloElegido} (Detalle: ${detalle}). Te comparto mi diseño por aquí para ver cómo quedaría.`;
+      let mensaje = `¡Hola CarolQ! 💖✨ Me gustaría cotizar y personalizar ${pzArticuloElegido === 'Termo' ? 'un' : 'una'} ${pzArticuloElegido} (Detalle: ${detalle}). Te comparto mi diseño por aquí para ver cómo quedaría.`;
+      if (pzRef_) mensaje += '\nMe gustó este trabajo: ' + pzRef_.titulo + (pzRef_.foto ? ' — ' + pzRef_.foto : '');   // [R2b] una sola línea, solo si hay referencia
+      if (TRAB_DEMO_) {   // [R2b] demo: solo muestra el texto, no abre WhatsApp
+        const dm = document.getElementById('pzDemoMsg');
+        dm.textContent = 'Modo demo. Así se vería tu mensaje:\n' + mensaje;
+        dm.hidden = false;
+        return;
+      }
       const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_ORDERS_PHONE}&text=${encodeURIComponent(mensaje)}`;
 
       const win = window.open(url, '_blank', 'noopener');
@@ -3989,7 +4289,7 @@
         ? `${customerData.street}, ${customerData.colonia}, ${customerData.zone}, ${customerData.state}, CP ${customerData.cp}`
         : `${customerData.zone}`;
 
-      const message = `¡Hola Carol Q! 💖✨ Me gustaría hacer el siguiente pedido:\n\n👤 *DATOS DEL CLIENTE:*\n• Nombre: ${customerData.name}\n• WhatsApp: ${customerData.phone}\n• Correo: ${customerData.email}\n• Comunidad VIP: ${customerData.isVip}\n\n📦 *ENTREGA:*\n• Modalidad: ${shipping.name}\n• Domicilio / Zona: ${domicilioTexto}\n• Referencias: ${customerData.notes || 'Sin notas'}\n\n🛍️ *PRODUCTOS:*\n${orderList}${discountMsg}*Total estimado: $${total} MXN*\n\n¿Me podrías confirmar existencias y datos de pago? 🙏`;
+      const message = `¡Hola CarolQ! 💖✨ Me gustaría hacer el siguiente pedido:\n\n👤 *DATOS DEL CLIENTE:*\n• Nombre: ${customerData.name}\n• WhatsApp: ${customerData.phone}\n• Correo: ${customerData.email}\n• Comunidad VIP: ${customerData.isVip}\n\n📦 *ENTREGA:*\n• Modalidad: ${shipping.name}\n• Domicilio / Zona: ${domicilioTexto}\n• Referencias: ${customerData.notes || 'Sin notas'}\n\n🛍️ *PRODUCTOS:*\n${orderList}${discountMsg}*Total estimado: $${total} MXN*\n\n¿Me podrías confirmar existencias y datos de pago? 🙏`;
       const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_ORDERS_PHONE}&text=${encodeURIComponent(message)}`;
       window.open(url, '_blank', 'noopener');
 
@@ -4122,7 +4422,749 @@
     })();
 
     loadFormFromStorage();
+    // [ref1] [R2] Galeria "Trabajos hechos" dentro de la ventana de personalizar (lee la pestana Referencias, solo lectura).
+    // Ya no se pide al abrir la pagina: se pide UNA vez al abrir la ventana (o al acercar el raton / tocar el boton) y se guarda en memoria.
+    // Todo el contenido se arma con createElement/textContent. Si el script es viejo y no responde una lista de trabajos, sale el estado de error.
+    // Modos demo (sin llamar al script): ?demo_trabajos=1 (con datos), ?demo_trabajos=vacio, ?demo_trabajos=error
+    const TRAB_DEMO_MODO_ = urlParams.get('demo_trabajos');
+    const TRAB_DEMO_ = TRAB_DEMO_MODO_ === '1' || TRAB_DEMO_MODO_ === 'vacio' || TRAB_DEMO_MODO_ === 'error';
+    const TRAB_PAGINA_ = 12;
+    const trab_ = { estado: 'idle', lista: [], cat: '', visibles: TRAB_PAGINA_, pintados: 0, promesa: null, manual: false };   // estado: idle | cargando | listo | vacio | error
+    const trabChips_ = document.getElementById('trabChips');
+    const trabGrid_ = document.getElementById('trabGrid');
+    const trabMsg_ = document.getElementById('trabMsg');
+    const trabMasBtn_ = document.getElementById('trabMasBtn');
+    const trabIg_ = document.getElementById('trabIg');
+    const pzTabs_ = [document.getElementById('pzTabTrabajos'), document.getElementById('pzTabPedido')];
+    const pzPaneles_ = [document.getElementById('pzPanelTrabajos'), document.getElementById('pzPanelPedido')];
+
+    function trabajosDemo_() {
+      const base = [
+        ['Playera mamá e hija', 'Playera', 'Quedó divina, a mi mamá le encantó.', 'Mariana', '👕'],
+        ['Taza con nombre', 'Taza', '', '', '☕'],
+        ['Sudadera bordada con las iniciales de toda la familia para la reunión de fin de año en Guadalajara', 'Sudadera', 'Calientita y el diseño es idéntico al que mandé.', 'Fernanda', '🧥'],
+        ['Termo para boda', 'Termo', '', 'Ana', '🥤'],
+        ['Playera de cumpleaños', 'Playera', '', '', '👕'],
+        ['Taza para maestra', 'Taza', 'Mi maestra casi llora de la emoción 🥹', 'Lupita', '☕'],
+        ['Sudadera de equipo', 'Sudadera', '', '', '🧥'],
+        ['Termo con flores', 'Termo', 'Súper bonito y mantiene el frío todo el día.', 'Dani', '🥤'],
+        ['Playera "Team Novia"', 'Playera', '', 'Sofía', '👕'],
+        ['Taza de pareja', 'Taza', '', '', '☕'],
+        ['', 'Sudadera', 'Llegó rapidísimo.', 'Paola', '🧥'],
+        ['Termo con nombre', 'Termo', '', '', '🥤'],
+        ['Playera de graduación', 'Playera', 'Quedaron perfectas para todo el grupo.', 'Regina', '👕'],
+        ['Taza mágica', 'Taza', '', '', '☕']
+      ];
+      return base.map(function (b, i) {
+        return { demo: true, foto: '', titulo: b[0], categoria: b[1], comentario: b[2], nombre: b[3], icono: b[4], enlace: '', orden: i + 1 };
+      });
+    }
+    // Solo filas con la forma de un trabajo (el catalogo tiene "nombre", no "comentario") y foto https
+    function trabValido_(r) {
+      return !!r && typeof r.comentario === 'string' && typeof r.foto === 'string' && (r.demo === true || r.foto.indexOf('https://') === 0);
+    }
+    function trabClaveCat_(c) { return String(c || '').trim().toLowerCase(); }
+
+    function trabArmarChips_() {
+      trabChips_.textContent = '';
+      const vistos = {};
+      const cats = [];
+      trab_.lista.forEach(function (r) {
+        const c = String(r.categoria || '').trim();
+        const k = trabClaveCat_(c);
+        if (c && !vistos[k]) { vistos[k] = true; cats.push(c); }
+      });
+      if (!cats.length) { trabChips_.hidden = true; return; }
+      [''].concat(cats).forEach(function (c) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'trab-chip' + (c === '' ? ' active' : '');
+        b.setAttribute('data-cat', trabClaveCat_(c));
+        b.setAttribute('aria-pressed', c === '' ? 'true' : 'false');
+        b.textContent = c === '' ? 'Todos' : c;
+        trabChips_.appendChild(b);
+      });
+      trabChips_.hidden = false;
+    }
+
+    function trabTarjeta_(r, indice, orden) {
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'trab-card';
+      card.setAttribute('data-indice', String(indice));
+      card.style.setProperty('--i', orden);   // escalonado, maximo 6
+      const media = document.createElement('span');
+      media.className = 'trab-media';
+      if (r.demo) {
+        const ph = document.createElement('span');
+        ph.className = 'trab-ph trab-ph' + (indice % 3);
+        ph.setAttribute('aria-hidden', 'true');
+        ph.textContent = r.icono || '🎨';
+        media.appendChild(ph);
+      } else {
+        const img = document.createElement('img');
+        // fade al terminar de cargar (fondo --card-media-bg mientras tanto); si falla, igual se muestra el alt
+        img.addEventListener('load', function () { img.classList.add('trab-img-ok'); });
+        img.addEventListener('error', function () { img.classList.add('trab-img-ok'); });
+        img.src = r.foto;
+        img.alt = r.titulo || r.categoria || 'Trabajo personalizado';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        media.appendChild(img);
+      }
+      const body = document.createElement('span');
+      body.className = 'trab-body';
+      if (r.titulo) {
+        const t = document.createElement('span');
+        t.className = 'trab-title';
+        t.textContent = r.titulo;
+        body.appendChild(t);
+      }
+      if (r.categoria) {
+        const p = document.createElement('span');
+        p.className = 'trab-pill';
+        p.textContent = r.categoria;
+        body.appendChild(p);
+      }
+      if (r.comentario) {
+        const q = document.createElement('span');
+        q.className = 'trab-quote';
+        q.textContent = '“' + r.comentario + '”';
+        body.appendChild(q);
+        if (r.nombre) {
+          const n = document.createElement('span');
+          n.className = 'trab-name';
+          n.textContent = '— ' + r.nombre;
+          body.appendChild(n);
+        }
+      }
+      card.appendChild(media);
+      card.appendChild(body);
+      return card;
+    }
+
+    function trabEsqueleto_() {
+      trabGrid_.textContent = '';
+      trab_.pintados = 0;
+      for (let k = 0; k < 6; k++) {
+        const s = document.createElement('div');
+        s.className = 'trab-skel';
+        s.setAttribute('aria-hidden', 'true');
+        trabGrid_.appendChild(s);
+      }
+    }
+
+    function trabMensaje_(tipo) {
+      trabMsg_.textContent = '';
+      const p = document.createElement('p');
+      if (tipo === 'vacio') p.textContent = 'Pronto subiremos nuestros trabajos. Mientras tanto, cuéntanos tu idea por WhatsApp.';
+      else if (tipo === 'error') p.textContent = 'No pudimos cargar los trabajos en este momento. Revisa tu conexión e inténtalo de nuevo.';
+      else p.textContent = 'No hay trabajos de esta categoría todavía.';
+      trabMsg_.appendChild(p);
+      if (tipo === 'vacio' || tipo === 'error') {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'trab-btn';
+        b.setAttribute('data-accion', tipo === 'vacio' ? 'pedido' : 'reintentar');
+        b.textContent = tipo === 'vacio' ? 'Hacer mi pedido' : 'Reintentar';
+        trabMsg_.appendChild(b);
+      }
+      trabMsg_.hidden = false;
+    }
+
+    // Pinta (o agrega) tarjetas de la categoria elegida, hasta "visibles". Con reset=false solo agrega las nuevas.
+    function trabRenderGrid_(reset) {
+      if (reset) { trabGrid_.textContent = ''; trab_.pintados = 0; }
+      const filtradas = [];
+      trab_.lista.forEach(function (r, i) {
+        if (!trab_.cat || trabClaveCat_(r.categoria) === trab_.cat) filtradas.push({ r: r, i: i });
+      });
+      const desde = trab_.pintados;
+      const hasta = Math.min(trab_.visibles, filtradas.length);
+      for (let k = desde; k < hasta; k++) trabGrid_.appendChild(trabTarjeta_(filtradas[k].r, filtradas[k].i, Math.min(k - desde, 5)));
+      trab_.pintados = hasta;
+      trabMasBtn_.hidden = hasta >= filtradas.length;
+      if (filtradas.length) trabMsg_.hidden = true; else trabMensaje_('filtro');
+      return desde;
+    }
+
+    function trabPintar_() {
+      const e = trab_.estado;
+      const cargando = e === 'idle' || e === 'cargando';
+      trabGrid_.setAttribute('aria-busy', cargando ? 'true' : 'false');
+      trabIg_.hidden = cargando;
+      if (e === 'listo') { trabRenderGrid_(true); return; }
+      trabChips_.hidden = true;
+      trabMasBtn_.hidden = true;
+      if (cargando) { trabMsg_.hidden = true; trabEsqueleto_(); return; }
+      trabGrid_.textContent = '';
+      trab_.pintados = 0;
+      trabMensaje_(e);
+    }
+
+    function pzSeleccionarTab_(i, foco) {
+      pzTabs_.forEach(function (t, k) {
+        const on = k === i;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        pzPaneles_[k].hidden = !on;
+      });
+      if (foco) pzTabs_[i].focus();
+    }
+
+    function cargarTrabajos_() {
+      if (trab_.promesa) return trab_.promesa;
+      trab_.estado = 'cargando';
+      trabPintar_();
+      trab_.promesa = (async function () {
+        try {
+          let data;
+          if (TRAB_DEMO_) {
+            await new Promise(function (ok) { setTimeout(ok, 700); });   // demo: simula la espera, no llama al script
+            if (TRAB_DEMO_MODO_ === 'error') throw new Error('demo error');
+            data = TRAB_DEMO_MODO_ === 'vacio' ? [] : trabajosDemo_();
+          } else {
+            const res = await fetch(SCRIPT_STOCK_URL + '?referencias=true&t=' + Date.now());
+            if (!res.ok) throw new Error('http ' + res.status);
+            data = await res.json();
+          }
+          if (!Array.isArray(data)) throw new Error('no es una lista de trabajos');
+          const lista = data.filter(trabValido_);
+          if (data.length && !lista.length) throw new Error('el script no tiene trabajos (version vieja)');
+          trab_.lista = lista.slice(0, 60);
+          trab_.estado = lista.length ? 'listo' : 'vacio';
+        } catch (err) {
+          console.warn('Trabajos:', err);
+          trab_.estado = 'error';
+          trab_.promesa = null;   // permite "Reintentar"
+        }
+        trab_.cat = '';
+        trab_.visibles = TRAB_PAGINA_;
+        if (trab_.estado === 'listo') trabArmarChips_();
+        trabPintar_();
+        // sin trabajos o con error, y la clienta no eligio pestana: se queda en "Hacer mi pedido"
+        if (trab_.estado !== 'listo' && !trab_.manual && personalizeModal.classList.contains('open')) pzSeleccionarTab_(1, false);
+      })();
+      return trab_.promesa;
+    }
+
+    function trabAlAbrir_() {
+      trab_.manual = TRAB_DEMO_;   // en modo demo no se cambia sola de pestana
+      const sinTrabajos = (trab_.estado === 'vacio' || trab_.estado === 'error') && !TRAB_DEMO_;
+      pzSeleccionarTab_(sinTrabajos ? 1 : 0, false);
+      if (trab_.estado === 'idle') cargarTrabajos_();
+    }
+
+    pzTabs_.forEach(function (t, i) {
+      t.addEventListener('click', function () { trab_.manual = true; pzSeleccionarTab_(i, false); });
+    });
+    document.getElementById('pzTabs').addEventListener('keydown', function (e) {
+      const i = pzTabs_.indexOf(document.activeElement);
+      if (i < 0) return;
+      let n = -1;
+      if (e.key === 'ArrowRight') n = (i + 1) % pzTabs_.length;
+      else if (e.key === 'ArrowLeft') n = (i + pzTabs_.length - 1) % pzTabs_.length;
+      else if (e.key === 'Home') n = 0;
+      else if (e.key === 'End') n = pzTabs_.length - 1;
+      if (n < 0) return;
+      e.preventDefault();
+      trab_.manual = true;
+      pzSeleccionarTab_(n, true);
+    });
+
+    // Precarga: al acercar el raton o tocar el boton de personalizar (una sola vez; la promesa evita pedidos repetidos)
+    ['pointerenter', 'touchstart'].forEach(function (ev) {
+      document.getElementById('personalizeCtaSection').addEventListener(ev, cargarTrabajos_, { once: true, passive: true });
+    });
+
+    trabChips_.addEventListener('click', function (e) {
+      const b = e.target.closest('.trab-chip');
+      if (!b) return;
+      const cat = b.getAttribute('data-cat');
+      if (cat === trab_.cat) return;
+      trab_.cat = cat;
+      trab_.visibles = TRAB_PAGINA_;
+      trabChips_.querySelectorAll('.trab-chip').forEach(function (x) {
+        const on = x === b;
+        x.classList.toggle('active', on);
+        x.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      // fade-out, cambia el contenido y fade-in; la altura se reserva un momento para que no salte
+      trabGrid_.style.minHeight = trabGrid_.offsetHeight + 'px';
+      trabGrid_.classList.add('is-out');
+      setTimeout(function () {
+        if (trab_.estado === 'listo') trabRenderGrid_(true);
+        trabGrid_.classList.remove('is-out');
+        setTimeout(function () { trabGrid_.style.minHeight = ''; }, 400);
+      }, 160);
+    });
+
+    trabMasBtn_.addEventListener('click', function () {
+      const teniaFoco = document.activeElement === trabMasBtn_;
+      trab_.visibles += TRAB_PAGINA_;
+      const desde = trabRenderGrid_(false);
+      if (teniaFoco && trabMasBtn_.hidden && trabGrid_.children[desde]) trabGrid_.children[desde].focus();   // el boton se oculto: el foco pasa a la primera tarjeta nueva
+    });
+
+    trabMsg_.addEventListener('click', function (e) {
+      const b = e.target.closest('[data-accion]');
+      if (!b) return;
+      if (b.getAttribute('data-accion') === 'pedido') { trab_.manual = true; pzSeleccionarTab_(1, true); }
+      else cargarTrabajos_();
+    });
+
+    trabGrid_.addEventListener('click', function (e) {
+      const card = e.target.closest('.trab-card');
+      if (!card) return;
+      vizAbrir_(card);   // [R2b]
+    });
+
+    // [R2b] Visor de fotos: navega dentro del filtro actual, con botones, flechas del teclado y deslizando. Todo con textContent.
+    const viz_ = { abierto: false, idx: [], pos: 0, tarjeta: null, tok: 0, cambio: 0 };
+    const vizEl_ = document.getElementById('trabViewer');
+    const vizStage_ = document.getElementById('trabVStage');
+    const vizSkel_ = document.getElementById('trabVSkel');
+    const vizFail_ = document.getElementById('trabVFail');
+    const vizInfo_ = document.getElementById('trabVInfo');
+    const vizPrev_ = document.getElementById('trabVPrev');
+    const vizNext_ = document.getElementById('trabVNext');
+    const vizIg_ = document.getElementById('trabVIg');
+
+    function vizTexto_(id, txt, pref) {
+      const el = document.getElementById(id);
+      el.textContent = txt ? (pref || '') + txt : '';
+      el.hidden = !txt;
+    }
+    function vizMostrar_(pos, suave) {
+      viz_.pos = pos;
+      const r = trab_.lista[viz_.idx[pos]];
+      const tok = ++viz_.tok;
+      const pintar = function () {
+        document.getElementById('trabVCount').textContent = (pos + 1) + ' de ' + viz_.idx.length;
+        document.getElementById('trabVTitulo').textContent = r.titulo || r.categoria || 'Trabajo personalizado';
+        vizTexto_('trabVCat', r.categoria);
+        vizTexto_('trabVQuote', r.comentario ? '“' + r.comentario + '”' : '');
+        vizTexto_('trabVName', r.comentario && r.nombre ? r.nombre : '', '— ');
+        if (r.enlace) { vizIg_.href = r.enlace; vizIg_.hidden = false; } else { vizIg_.hidden = true; vizIg_.removeAttribute('href'); }
+        vizInfo_.classList.remove('is-out');
+      };
+      if (suave) { vizInfo_.classList.add('is-out'); setTimeout(function () { if (tok === viz_.tok) pintar(); }, 120); } else pintar();
+      vizPrev_.disabled = pos <= 0;
+      vizNext_.disabled = pos >= viz_.idx.length - 1;
+      // foto: esqueleto mientras carga, fade al llegar, mensaje corto si no carga
+      vizStage_.querySelectorAll('img, .trab-ph').forEach(function (x) { x.remove(); });
+      vizFail_.classList.remove('is-on');
+      if (r.demo) {
+        vizSkel_.classList.add('is-off');
+        const ph = document.createElement('span');
+        ph.className = 'trab-ph trab-ph' + (viz_.idx[pos] % 3);
+        ph.setAttribute('aria-hidden', 'true');
+        ph.textContent = r.icono || '🎨';
+        vizStage_.insertBefore(ph, vizSkel_);
+      } else {
+        vizSkel_.classList.remove('is-off');
+        const img = document.createElement('img');
+        img.alt = r.titulo || r.categoria || 'Trabajo personalizado';
+        img.decoding = 'async';
+        img.addEventListener('load', function () { if (tok !== viz_.tok) return; img.classList.add('trab-img-ok'); vizSkel_.classList.add('is-off'); });
+        img.addEventListener('error', function () { if (tok !== viz_.tok) return; vizSkel_.classList.add('is-off'); vizFail_.classList.add('is-on'); });
+        img.src = r.foto;
+        vizStage_.insertBefore(img, vizSkel_);
+      }
+      // precarga de las fotos vecinas
+      [pos - 1, pos + 1].forEach(function (p) {
+        const v = trab_.lista[viz_.idx[p]];
+        if (v && !v.demo) new Image().src = v.foto;
+      });
+    }
+    function vizAbrir_(card) {
+      const sel = Number(card.getAttribute('data-indice'));
+      viz_.idx = [];
+      trab_.lista.forEach(function (r, i) {
+        if (!trab_.cat || trabClaveCat_(r.categoria) === trab_.cat) viz_.idx.push(i);
+      });
+      const pos = viz_.idx.indexOf(sel);
+      if (pos < 0) return;
+      viz_.tarjeta = card;
+      vizMostrar_(pos, false);
+      if (viz_.abierto) return;
+      viz_.abierto = true;
+      vizEl_.inert = false;
+      vizEl_.classList.add('open');
+      lockBodyScroll();
+      setTimeout(function () { if (viz_.abierto) document.getElementById('trabVClose').focus(); }, 50);
+    }
+    // vuelve = true: el foco regresa a la tarjeta tocada
+    function vizCerrar_(vuelve) {
+      if (!viz_.abierto) return;
+      viz_.abierto = false;
+      vizEl_.classList.remove('open');
+      vizEl_.inert = true;
+      unlockBodyScroll();
+      if (vuelve && viz_.tarjeta && document.contains(viz_.tarjeta)) viz_.tarjeta.focus();
+    }
+    function vizIr_(d) {
+      const n = viz_.pos + d;
+      if (n < 0 || n >= viz_.idx.length) return;
+      vizMostrar_(n, true);
+    }
+    function vizQuiero_() {
+      const r = trab_.lista[viz_.idx[viz_.pos]];
+      if (!r) return;
+      vizCerrar_(false);
+      pzRef_ = { titulo: r.titulo || r.categoria || 'Trabajo personalizado', foto: r.demo ? '' : r.foto, demo: !!r.demo, icono: r.icono };
+      document.getElementById('pzRefTitulo').textContent = pzRef_.titulo;
+      const th = document.getElementById('pzRefThumb');
+      th.textContent = '';
+      if (pzRef_.demo) { th.textContent = pzRef_.icono || '🎨'; } else { const im = document.createElement('img'); im.alt = ''; im.src = pzRef_.foto; th.appendChild(im); }
+      const refEl = document.getElementById('pzRef');
+      refEl.classList.remove('is-out');
+      refEl.hidden = false;
+      // preselecciona el artículo si la categoría es una de las cuatro
+      const btnArt = Array.prototype.find.call(document.querySelectorAll('#pzBlanksGrid .pz-blank-btn'), function (b) {
+        return trabClaveCat_(b.getAttribute('data-articulo')) === trabClaveCat_(r.categoria);
+      });
+      if (btnArt) btnArt.click();
+      trab_.manual = true;
+      pzSeleccionarTab_(1, true);
+    }
+    vizPrev_.addEventListener('click', function () { vizIr_(-1); });
+    vizNext_.addEventListener('click', function () { vizIr_(1); });
+    document.getElementById('trabVClose').addEventListener('click', function () { vizCerrar_(true); });
+    document.getElementById('trabVQuiero').addEventListener('click', vizQuiero_);
+    vizEl_.addEventListener('click', function (e) { if (e.target === vizEl_) vizCerrar_(true); });
+    document.getElementById('pzRefQuitar').addEventListener('click', function () {
+      pzQuitarRef_();
+      const primero = document.querySelector('#pzBlanksGrid .pz-blank-btn');
+      if (primero) primero.focus();
+    });
+    // deslizar con el dedo: izquierda = siguiente, derecha = anterior
+    let vizX_ = null, vizY_ = 0;
+    vizStage_.addEventListener('touchstart', function (e) { const t = e.touches[0]; vizX_ = t.clientX; vizY_ = t.clientY; }, { passive: true });
+    vizStage_.addEventListener('touchend', function (e) {
+      if (vizX_ === null) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - vizX_, dy = t.clientY - vizY_;
+      vizX_ = null;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) vizIr_(dx < 0 ? 1 : -1);
+    }, { passive: true });
+    // Teclado: en fase de captura para que Escape cierre solo el visor (y no la ventana de personalizar) y el Tab no se salga
+    document.addEventListener('keydown', function (e) {
+      if (!viz_.abierto) return;
+      if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); vizCerrar_(true); return; }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); e.stopImmediatePropagation(); vizIr_(-1); return; }
+      if (e.key === 'ArrowRight') { e.preventDefault(); e.stopImmediatePropagation(); vizIr_(1); return; }
+      if (e.key !== 'Tab') return;
+      e.stopImmediatePropagation();
+      const f = Array.from(vizEl_.firstElementChild.querySelectorAll('a[href],button:not([disabled])')).filter(function (x) { return x.offsetParent !== null; });
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (!vizEl_.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }, true);
+
+    // [R1] Seccion "Lo que dicen de CarolQ". Todo el contenido se arma con createElement/textContent.
+    // Con ?demo_resenas=1 no se llama al script: se usan reseñas de ejemplo y el envio solo simula exito.
+    // [R1p] Modos: 1 (con datos), vacio (sin reseñas), error (el envio simula un fallo)
+    const RES_DEMO_MODO_ = urlParams.get('demo_resenas');
+    const RES_DEMO_ = RES_DEMO_MODO_ === '1' || RES_DEMO_MODO_ === 'vacio' || RES_DEMO_MODO_ === 'error';
+    function resenasDemo_() {
+      if (RES_DEMO_MODO_ === 'vacio') return { resumen: { cantidad: 0, servicio: 0, calidad: 0 }, items: [] };
+      const items = [
+        { fecha: '12/09/2026', nombre: 'Mariana', servicio: 5, calidad: 5, comentario: 'Me llegó rapidísimo y quedó hermoso. ¡Gracias, Carol!', verificada: true },
+        { fecha: '03/09/2026', nombre: 'Fernanda R.', servicio: 4, calidad: 5, comentario: 'Pedí un regalo personalizado para mi mamá y le encantó. Me ayudaron a elegir los colores, resolvieron todas mis dudas por WhatsApp y el empaque venía muy bonito. Sin duda volveré a comprar para las fiestas de fin de año.', verificada: false },
+        { fecha: '28/08/2026', nombre: 'Lupita', servicio: 5, calidad: 4, comentario: '', verificada: false },
+        { fecha: '15/08/2026', nombre: 'Ana', servicio: 4, calidad: 4, comentario: 'Todo muy bien, buena atención.', verificada: false }
+      ];
+      const prom = function (k) { return Math.round(items.reduce(function (a, x) { return a + x[k]; }, 0) / items.length * 10) / 10; };
+      return { resumen: { cantidad: items.length, servicio: prom('servicio'), calidad: prom('calidad') }, items: items };
+    }
+    function estrellasTexto_(n) {
+      const r = Math.max(0, Math.min(5, Math.round(Number(n) || 0)));
+      return '★'.repeat(r) + '☆'.repeat(5 - r);
+    }
+    function crearEstrellas_(n) {
+      const s = document.createElement('span');
+      s.className = 'res-stars';
+      s.textContent = estrellasTexto_(n);
+      s.setAttribute('aria-label', (Math.round(Number(n) * 10) / 10) + ' de 5 estrellas');
+      return s;
+    }
+    function filaResumen_(etiqueta, prom) {
+      const row = document.createElement('div');
+      row.className = 'res-summary-row';
+      const l = document.createElement('span');
+      l.className = 'res-summary-label';
+      l.textContent = etiqueta;
+      const p = document.createElement('span');
+      p.textContent = (Number(prom) || 0).toFixed(1);
+      row.appendChild(l);
+      row.appendChild(crearEstrellas_(prom));
+      row.appendChild(p);
+      return row;
+    }
+    function filaTarjeta_(etiqueta, n) {
+      const row = document.createElement('div');
+      row.className = 'res-card-row';
+      const l = document.createElement('span');
+      l.textContent = etiqueta;
+      row.appendChild(l);
+      row.appendChild(crearEstrellas_(n));
+      return row;
+    }
+    function pintarResenas_(data) {
+      const sec = document.getElementById('resSection');
+      const resumen = document.getElementById('resSummary');
+      const grid = document.getElementById('resGrid');
+      const vacio = document.getElementById('resEmpty');
+      if (!sec || !resumen || !grid || !vacio) return;
+      const items = data.items.filter(function (it) {
+        return it && typeof it.nombre === 'string' && Number(it.servicio) >= 1 && Number(it.calidad) >= 1;
+      }).slice(0, 6);
+      const cant = Number(data.resumen.cantidad) || 0;
+      resumen.textContent = '';
+      grid.textContent = '';
+      if (cant > 0 && items.length) {
+        sec.classList.remove('res-vacia');
+        vacio.hidden = true;
+        resumen.appendChild(filaResumen_('Servicio', data.resumen.servicio));
+        resumen.appendChild(filaResumen_('Calidad', data.resumen.calidad));
+        const c = document.createElement('div');
+        c.className = 'res-summary-count';
+        c.textContent = cant + (cant === 1 ? ' reseña' : ' reseñas');
+        resumen.appendChild(c);
+        items.forEach(function (it) {
+          const card = document.createElement('article');
+          card.className = 'res-card';
+          card.appendChild(filaTarjeta_('Servicio', it.servicio));
+          card.appendChild(filaTarjeta_('Calidad', it.calidad));
+          if (typeof it.comentario === 'string' && it.comentario) {
+            const q = document.createElement('p');
+            q.className = 'res-quote';
+            q.textContent = '“' + it.comentario + '”';
+            card.appendChild(q);
+          }
+          const n = document.createElement('div');
+          n.className = 'res-name';
+          n.textContent = '— ' + it.nombre;
+          card.appendChild(n);
+          if (it.verificada === true) {
+            const b = document.createElement('span');
+            b.className = 'res-badge';
+            b.textContent = 'Compra verificada';
+            card.appendChild(b);
+          }
+          card.style.setProperty('--i', Math.min(grid.children.length, 5));   // [R1p] escalonado, maximo 6
+          grid.appendChild(card);
+        });
+      } else {
+        sec.classList.add('res-vacia');
+        vacio.hidden = false;
+      }
+      sec.hidden = false;
+    }
+    async function cargarResenas_() {
+      try {
+        let data;
+        if (RES_DEMO_) {
+          data = resenasDemo_();
+        } else {
+          const res = await fetch(SCRIPT_STOCK_URL + '?resenas=true&t=' + Date.now());
+          if (!res.ok) return;
+          data = await res.json();
+        }
+        // Si el servidor aun no tiene la funcion nueva devuelve el catalogo (un arreglo): la seccion sigue oculta.
+        if (!data || !data.resumen || !Array.isArray(data.items)) return;
+        pintarResenas_(data);
+      } catch (err) {
+        console.warn('Resenas:', err);
+      }
+    }
+
+    // [R1] Formulario de reseña (modal)
+    (function initFormularioResena_() {
+      const modal = document.getElementById('resModal');
+      const form = document.getElementById('resForm');
+      const abrir = document.getElementById('resOpenBtn');
+      const cerrarBtn = document.getElementById('resCerrarBtn');
+      const enviarBtn = document.getElementById('resEnviarBtn');
+      const msg = document.getElementById('resMsg');
+      const nombre = document.getElementById('resNombre');
+      const comentario = document.getElementById('resComentario');
+      const contador = document.getElementById('resContador');
+      const folio = document.getElementById('resFolio');
+      const whatsapp = document.getElementById('resWhatsapp');
+      const web = document.getElementById('resWeb');
+      if (!modal || !form || !abrir || !cerrarBtn || !enviarBtn || !msg || !nombre || !comentario || !contador || !folio || !whatsapp || !web) return;
+      const valores = { servicio: 0, calidad: 0 };
+      const grupos = { servicio: document.getElementById('resRateServicio'), calidad: document.getElementById('resRateCalidad') };
+      let abierto = false, enviando = false, timerCierre = null;
+
+      // [R1p] "hasta" = vista previa al pasar el raton; sin el, se pinta el valor elegido
+      function pintarEstrellas(clave, hasta) {
+        const n = hasta || valores[clave];
+        Array.prototype.forEach.call(grupos[clave].children, function (b, i) {
+          b.textContent = i < n ? '★' : '☆';
+          b.setAttribute('aria-pressed', i + 1 === valores[clave] ? 'true' : 'false');
+        });
+      }
+      const conRaton = window.matchMedia('(hover: hover) and (pointer: fine)');
+      Object.keys(grupos).forEach(function (clave) {
+        for (let k = 1; k <= 5; k++) {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'res-star-btn';
+          b.setAttribute('aria-label', k + ' de 5 estrellas');
+          b.addEventListener('click', function () {
+            if (enviando) return;
+            valores[clave] = k; pintarEstrellas(clave);
+            b.classList.remove('res-star-pop'); void b.offsetWidth; b.classList.add('res-star-pop');
+          });
+          b.addEventListener('animationend', function () { b.classList.remove('res-star-pop'); });
+          b.addEventListener('mouseenter', function () { if (conRaton.matches && !enviando) pintarEstrellas(clave, k); });
+          b.addEventListener('keydown', function (e) {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            e.preventDefault();
+            const hermanas = grupos[clave].children;
+            hermanas[(k - 1 + (e.key === 'ArrowRight' ? 1 : 4)) % 5].focus();
+          });
+          grupos[clave].appendChild(b);
+        }
+        grupos[clave].addEventListener('mouseleave', function () { pintarEstrellas(clave); });
+        pintarEstrellas(clave);
+      });
+
+      let timerMsg = null;
+      function mostrarMsg(texto, clase) {
+        clearTimeout(timerMsg);
+        msg.className = 'res-msg' + (clase ? ' ' + clase : '');
+        if (texto) { msg.textContent = texto; return; }
+        // [R1p] al ocultar, el texto se quita despues del fade para que la salida sea suave
+        timerMsg = setTimeout(function () { msg.textContent = ''; }, 220);
+      }
+      function fijarSoloLectura(si) {
+        [nombre, comentario, folio, whatsapp].forEach(function (c) { c.readOnly = si; });
+        form.classList.toggle('res-enviando', si);
+      }
+      function reiniciar() {
+        form.reset();
+        valores.servicio = 0; valores.calidad = 0;
+        pintarEstrellas('servicio'); pintarEstrellas('calidad');
+        contador.textContent = '0/300';
+        contador.classList.remove('res-count-aviso');
+        mostrarMsg('', '');
+      }
+      function abrirModal() {
+        if (abierto) return;
+        abierto = true;
+        mostrarMsg('', '');
+        modal.classList.add('open');
+        lockBodyScroll();
+        nombre.focus();
+      }
+      function cerrarModal() {
+        if (!abierto) return;
+        abierto = false;
+        clearTimeout(timerCierre);
+        modal.classList.remove('open');
+        unlockBodyScroll();
+        abrir.focus();
+      }
+      comentario.addEventListener('input', function () {
+        contador.textContent = comentario.value.length + '/300';
+        contador.classList.toggle('res-count-aviso', comentario.value.length >= 280);   // [R1p]
+      });
+      abrir.addEventListener('click', abrirModal);
+      cerrarBtn.addEventListener('click', cerrarModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) cerrarModal(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && abierto) cerrarModal(); });
+
+      // [R1c] Ventana de agradecimiento: se abre al terminar el envio, ya con el formulario cerrado.
+      let graciasAbierta = false;
+      function graciasEl() { return document.getElementById('resGraciasModal'); }
+      function cerrarGracias() {
+        const g = graciasEl();
+        if (!graciasAbierta || !g) return;
+        graciasAbierta = false;
+        g.classList.remove('open');
+        unlockBodyScroll();
+        abrir.focus();
+      }
+      function mostrarGracias(nomPersona) {
+        const g = graciasEl(), t = document.getElementById('resGraciasTitulo'), b = document.getElementById('resGraciasBtn');
+        if (!g || !t || !b) return false;
+        const primero = String(nomPersona || '').trim().split(/\s+/)[0];
+        t.textContent = primero ? '¡Gracias, ' + primero + '!' : '¡Gracias por tu reseña!';
+        if (!g.dataset.listo) {
+          g.dataset.listo = '1';
+          b.addEventListener('click', cerrarGracias);
+          g.addEventListener('click', function (ev) { if (ev.target === g) cerrarGracias(); });
+          document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') cerrarGracias(); });
+        }
+        graciasAbierta = true;
+        g.classList.add('open');
+        lockBodyScroll();
+        b.focus();
+        return true;
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (enviando) return;
+        const nom = nombre.value.trim();
+        const fol = folio.value.trim();
+        const tel = whatsapp.value.replace(/\D/g, '');
+        if (nom.length < 2) { mostrarMsg('Escribe tu nombre (mínimo 2 letras).', 'res-error'); nombre.focus(); return; }
+        if (!valores.servicio || !valores.calidad) { mostrarMsg('Elige de 1 a 5 estrellas en Servicio y en Calidad.', 'res-error'); return; }
+        if ((fol && !tel) || (!fol && tel)) { mostrarMsg('Para marcar tu compra como verificada escribe tu folio y tu WhatsApp, o deja ambos vacíos.', 'res-error'); return; }
+        if (tel && tel.length !== 10) { mostrarMsg('Tu WhatsApp debe tener 10 dígitos.', 'res-error'); whatsapp.focus(); return; }
+        enviando = true;
+        enviarBtn.disabled = true;
+        enviarBtn.textContent = 'Enviando...';
+        fijarSoloLectura(true);   // [R1p]
+        mostrarMsg('', '');
+        try {
+          let r;
+          if (RES_DEMO_) {
+            await new Promise(function (ok) { setTimeout(ok, 600); });
+            r = RES_DEMO_MODO_ === 'error'
+              ? { status: 'error', message: 'No pudimos guardar tu reseña (demo de error). Intenta de nuevo en un momento.' }
+              : { status: 'success' };
+          } else {
+            const res = await fetch(SCRIPT_STOCK_URL, {
+              method: "POST",
+              headers: { "Content-Type": "text/plain;charset=utf-8" },
+              body: JSON.stringify({
+                accion: 'resena', nombre: nom, servicio: valores.servicio, calidad: valores.calidad,
+                comentario: comentario.value.trim(), folio: fol, whatsapp: tel, web: web.value
+              })
+            });
+            r = await res.json();
+          }
+          if (r && r.status === 'success') {   // [R1c]
+            reiniciar();
+            cerrarModal();
+            if (!mostrarGracias(nom)) window.alert('¡Gracias! Tu reseña se publicará cuando Carol la revise.');
+          } else {
+            mostrarMsg((r && typeof r.message === 'string' && r.message) || 'No pudimos guardar tu reseña. Intenta de nuevo.', 'res-error');
+          }
+        } catch (err) {
+          console.warn('Resenas (envio):', err);
+          mostrarMsg('No pudimos guardar tu reseña. Intenta de nuevo.', 'res-error');
+        } finally {
+          enviando = false;
+          fijarSoloLectura(false);   // [R1p]
+          enviarBtn.disabled = false;
+          enviarBtn.textContent = 'Enviar';
+        }
+      });
+    })();
+
     fetchGoogleSheets(true);
+    if (TRAB_DEMO_) openPersonalizeModal();   // [R2] modo demo: abre solo la ventana de trabajos (la carga real ya no ocurre al abrir la pagina)
+    cargarResenas_();   // [R1]
     updateCartUI();
 
     let catalogPollTimer = null;
